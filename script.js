@@ -1,4 +1,5 @@
 //Memulai JS
+// Button Angka
 const numbers = document.querySelectorAll(".number")
 
 numbers.forEach((number)=>{
@@ -8,12 +9,14 @@ numbers.forEach((number)=>{
     });
 });
 
+//Update Layar 
 const calculationScreen = document.querySelector(".calculator-screen");
 
 const updateScreen = (number)=>{
     calculationScreen.value = number;
 };
 
+//Inisialisasi variable
 let prevNumber ="";
 let calculatorOperator ="";
 let currentNumber ="0";
@@ -26,6 +29,7 @@ const inputNumber =(number)=>{
     }
 };
 
+//Event Klik Operator
 const operators = document.querySelectorAll(".operator");
 
 operators.forEach((operator)=>{
@@ -48,6 +52,7 @@ equalSign.addEventListener("click", ()=>{
     updateScreen(currentNumber);
 });
 
+//Fungsi Kalkulasi
 const calculate =()=>{
     let result ="";
     const prev = parseFloat(prevNumber);
@@ -74,6 +79,7 @@ const calculate =()=>{
     calculationOperator ="";
 };
 
+//Fungsi AC
 const clearBtn = document.querySelector('.all-clear')
 clearBtn.addEventListener("click",()=>{
     clearAll();
@@ -86,6 +92,7 @@ const clearAll =()=>{
     currentNumber = "0";
 }
 
+//Fungsi Desimal
 const decimal = document.querySelector(".decimal");
 decimal.addEventListener("click",(event)=>{
     inputDecimal(event.target.value);
